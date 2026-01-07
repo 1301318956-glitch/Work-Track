@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Daily Tasks</h1>
+            <p class="date">Today • December 12, 2024</p>
+        </header>
+
+        <div class="add-task-section">
+            <input type="text" placeholder="Add a new task..." class="task-input">
+            <button class="add-btn">Add Task</button>
+        </div>
+
+        <div class="tasks-container">
+            <div class="section">
+                <h2>🎯 To Do</h2>
+                <div class="task-list">
+                    <div class="task-item">
+                        <input type="checkbox" id="task1">
+                        <label for="task1">Complete math homework</label>
+                        <button class="delete-btn">×</button>
+                    </div>
+                    <div class="task-item">
+                        <input type="checkbox" id="task2">
+                        <label for="task2">Call dentist for appointment</label>
+                        <button class="delete-btn">×</button>
+                    </div>
+                    <div class="task-item">
+                        <input type="checkbox" id="task3">
+                        <label for="task3">Grocery shopping</label>
+                        <button class="delete-btn">×</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>✅ Completed</h2>
+                <div class="task-list">
+                    <div class="task-item completed">
+                        <input type="checkbox" id="task4" checked>
+                        <label for="task4">Morning workout</label>
+                        <button class="delete-btn">×</button>
+                    </div>
+                    <div class="task-item completed">
+                        <input type="checkbox" id="task5" checked>
+                        <label for="task5">Read chapter 3</label>
+                        <button class="delete-btn">×</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p class="stats">5 tasks total • 2 completed • 3 remaining</p>
+        </footer>
+    </div>
+</body>
+</html>
