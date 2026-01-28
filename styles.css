@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    background: #2d2d2d;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #4a9eff;
+    margin-bottom: 10px;
+}
+
+.date {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    margin-bottom: 20px;
+}
+
+.progress-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 10px;
+    background: #404040;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4a9eff, #00d4aa);
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    color: #4a9eff;
+    font-weight: 600;
+}
+
+.add-task-section {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    background: #2d2d2d;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.task-input {
+    flex: 1;
+    padding: 12px 16px;
+    background: #404040;
+    border: 2px solid #555;
+    border-radius: 8px;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+.task-input:focus {
+    outline: none;
+    border-color: #4a9eff;
+}
+
+.category-select, .time-input {
+    padding: 12px 16px;
+    background: #404040;
+    border: 2px solid #555;
+    border-radius: 8px;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+.add-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #4a9eff, #00d4aa);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.add-btn:hover {
+    transform: translateY(-2px);
+}
+
+.tasks-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.tasks-column h2 {
+    color: #4a9eff;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #2d2d2d;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    border: 2px solid #404040;
+    transition: all 0.3s ease;
+}
+
+.task-item:hover {
+    border-color: #4a9eff;
+    transform: translateY(-1px);
+}
+
+.task-item.completed {
+    opacity: 0.7;
+    border-color: #00d4aa;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: #4a9eff;
+}
+
+.task-content {
+    flex: 1;
+}
+
+.task-text {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.task-meta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.category {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.category.work {
+    background: #ff6b6b;
+    color: white;
+}
+
+.category.personal {
+    background: #4ecdc4;
+    color: white;
+}
+
+.category.health {
+    background: #45b7d1;
+    color: white;
+}
+
+.category.shopping {
+    background: #f9ca24;
+    color: #333;
+}
+
+.time {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+}
+
+.delete-btn {
+    width: 30px;
+    height: 30px;
+    background: #ff4757;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+    background: #ff3838;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .tasks-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .add-task-section {
+        flex-direction: column;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}

@@ -3,63 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Task Manager</title>
-    <link rel="stylesheet" href="style.css">
+    <title>RETRO QUEST TRACKER</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>📋 Daily Tasks</h1>
-            <p class="date">Today • December 12, 2024</p>
+    <div class="scanner-overlay"></div>
+    
+    <div class="game-container">
+        <header class="game-header">
+            <h1 class="neon-title">QUEST TRACKER</h1>
+            <div class="xp-container">
+                <span class="xp-label">XP: 750/1000</span>
+                <div class="xp-bar">
+                    <div class="xp-fill"></div>
+                </div>
+            </div>
         </header>
 
-        <div class="add-task-section">
-            <input type="text" placeholder="Add a new task..." class="task-input">
-            <button class="add-btn">Add Task</button>
+        <div class="quest-input-section">
+            <input type="text" class="quest-input" placeholder="Enter new quest...">
+            <button class="add-quest-btn">ADD QUEST</button>
         </div>
 
-        <div class="tasks-container">
-            <div class="section">
-                <h2>🎯 To Do</h2>
-                <div class="task-list">
-                    <div class="task-item">
-                        <input type="checkbox" id="task1">
-                        <label for="task1">Complete math homework</label>
+        <div class="quest-categories">
+            <div class="category daily-quests">
+                <h2 class="category-title">🗡️ DAILY QUESTS</h2>
+                <div class="quest-list">
+                    <div class="quest-item">
+                        <input type="checkbox" class="quest-checkbox" id="quest1">
+                        <label for="quest1">Complete homework mission</label>
                         <button class="delete-btn">×</button>
                     </div>
-                    <div class="task-item">
-                        <input type="checkbox" id="task2">
-                        <label for="task2">Call dentist for appointment</label>
-                        <button class="delete-btn">×</button>
-                    </div>
-                    <div class="task-item">
-                        <input type="checkbox" id="task3">
-                        <label for="task3">Grocery shopping</label>
+                    <div class="quest-item">
+                        <input type="checkbox" class="quest-checkbox" id="quest2">
+                        <label for="quest2">Exercise training session</label>
                         <button class="delete-btn">×</button>
                     </div>
                 </div>
             </div>
 
-            <div class="section">
-                <h2>✅ Completed</h2>
-                <div class="task-list">
-                    <div class="task-item completed">
-                        <input type="checkbox" id="task4" checked>
-                        <label for="task4">Morning workout</label>
+            <div class="category power-ups">
+                <h2 class="category-title">⚡ POWER-UPS</h2>
+                <div class="quest-list">
+                    <div class="quest-item">
+                        <input type="checkbox" class="quest-checkbox" id="quest3">
+                        <label for="quest3">Drink 8 glasses of water</label>
                         <button class="delete-btn">×</button>
                     </div>
-                    <div class="task-item completed">
-                        <input type="checkbox" id="task5" checked>
-                        <label for="task5">Read chapter 3</label>
+                    <div class="quest-item completed">
+                        <input type="checkbox" class="quest-checkbox" id="quest4" checked>
+                        <label for="quest4">Meditation power-up</label>
+                        <button class="delete-btn">×</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category boss-battles">
+                <h2 class="category-title">🏆 BOSS BATTLES</h2>
+                <div class="quest-list">
+                    <div class="quest-item">
+                        <input type="checkbox" class="quest-checkbox" id="quest5">
+                        <label for="quest5">Finish final project</label>
                         <button class="delete-btn">×</button>
                     </div>
                 </div>
             </div>
         </div>
-
-        <footer>
-            <p class="stats">5 tasks total • 2 completed • 3 remaining</p>
-        </footer>
     </div>
 </body>
 </html>
