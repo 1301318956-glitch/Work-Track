@@ -3,72 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RETRO QUEST TRACKER</title>
+    <title>Damascus To-Do List</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="scanner-overlay"></div>
-    
-    <div class="game-container">
-        <header class="game-header">
-            <h1 class="neon-title">QUEST TRACKER</h1>
-            <div class="xp-container">
-                <span class="xp-label">XP: 750/1000</span>
-                <div class="xp-bar">
-                    <div class="xp-fill"></div>
-                </div>
-            </div>
-        </header>
-
-        <div class="quest-input-section">
-            <input type="text" class="quest-input" placeholder="Enter new quest...">
-            <button class="add-quest-btn">ADD QUEST</button>
+    <div class="container">
+        <h1>To-Do List</h1>
+        
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Add a new task...">
+            <button id="addButton">Add Task</button>
         </div>
-
-        <div class="quest-categories">
-            <div class="category daily-quests">
-                <h2 class="category-title">🗡️ DAILY QUESTS</h2>
-                <div class="quest-list">
-                    <div class="quest-item">
-                        <input type="checkbox" class="quest-checkbox" id="quest1">
-                        <label for="quest1">Complete homework mission</label>
-                        <button class="delete-btn">×</button>
-                    </div>
-                    <div class="quest-item">
-                        <input type="checkbox" class="quest-checkbox" id="quest2">
-                        <label for="quest2">Exercise training session</label>
-                        <button class="delete-btn">×</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="category power-ups">
-                <h2 class="category-title">⚡ POWER-UPS</h2>
-                <div class="quest-list">
-                    <div class="quest-item">
-                        <input type="checkbox" class="quest-checkbox" id="quest3">
-                        <label for="quest3">Drink 8 glasses of water</label>
-                        <button class="delete-btn">×</button>
-                    </div>
-                    <div class="quest-item completed">
-                        <input type="checkbox" class="quest-checkbox" id="quest4" checked>
-                        <label for="quest4">Meditation power-up</label>
-                        <button class="delete-btn">×</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="category boss-battles">
-                <h2 class="category-title">🏆 BOSS BATTLES</h2>
-                <div class="quest-list">
-                    <div class="quest-item">
-                        <input type="checkbox" class="quest-checkbox" id="quest5">
-                        <label for="quest5">Finish final project</label>
-                        <button class="delete-btn">×</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
+        <ul id="taskList"></ul>
     </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
