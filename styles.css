@@ -73,3 +73,28 @@ h1 {
 .delete-button:hover {
     background-color: #c82333;
 }
+
+.your-button-class:hover {
+    background-color: #new-color;
+    transition: background-color 0.3s ease;
+}
+
+#addButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
