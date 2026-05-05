@@ -51,3 +51,30 @@ function addNewTask() {
 
 // Connect the add button to the function
 addButton.addEventListener("click", addNewTask);
+
+// Create the complete button
+let completeButton = document.createElement("button");
+completeButton.className = "complete-button";
+completeButton.innerText = "Complete";
+
+// Add click event to complete button
+completeButton.addEventListener("click", completeTask);
+
+// Add the complete button to the task (before the delete button)
+newTask.appendChild(completeButton);
+
+// Function to mark a task as completed
+function completeTask() {
+    let taskItem = this.parentElement;
+    let taskText = taskItem.querySelector('.task-text');
+    
+    // Toggle completed style
+    if (taskText.style.textDecoration === 'line-through') {
+        taskText.style.textDecoration = 'none';
+        this.innerText = 'Complete';
+    } else {
+        taskText.style.textDecoration = 'line-through';
+        this.innerText = 'Undo';
+    }
+}
+
