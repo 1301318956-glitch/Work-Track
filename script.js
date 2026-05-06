@@ -1,19 +1,19 @@
-// Get the elements we need
+// Step 1: Get all the elements we need
 let taskInput = document.getElementById("taskInput");
 let addButton = document.getElementById("addButton");
 let taskList = document.getElementById("taskList");
 
-// Function to delete a task
-function deleteTask() {
-    // 'this' refers to the delete button that was clicked
-    let taskItem = this.parentElement;
-    taskList.removeChild(taskItem);
-}
+// Step 2: Add event listener to the button
+addButton.addEventListener("click", addNewTask);
 
-// Function to add a new task
+// Step 3: Function to add a new task
 function addNewTask() {
     // Get the text from the input
     let taskText = taskInput.value;
+    
+    // Get the selected category
+    let categorySelect = document.getElementById("categorySelect");
+    let selectedCategory = categorySelect.value;
     
     // Check if input is not empty
     if (taskText === "") {
@@ -24,6 +24,25 @@ function addNewTask() {
     // Create the main list item
     let newTask = document.createElement("li");
     newTask.className = "task-item";
+    
+    // Create the category label
+    let categoryLabel = document.createElement("span");
+    categoryLabel.innerText = selectedCategory;
+    categoryLabel.style.marginRight = "10px";
+    categoryLabel.style.fontWeight = "bold";
+    categoryLabel.style.padding = "3px 8px";
+    categoryLabel.style.borderRadius = "3px";
+    categoryLabel.style.color = "white";
+    
+    // Set different colors based on category
+    if (selectedCategory === "personal") {
+        categoryLabel.style.backgroundColor = "#007bff";
+    } else if (selectedCategory === "homework") {
+        categoryLabel.style.backgroundColor = "#28a745";
+    } else if (selectedCategory === "chores") {
+        categoryLabel.style.backgroundColor = "#ffc107";
+        categoryLabel.style.color = "black";
+    }
     
     // Create the task text span
     let taskTextSpan = document.createElement("span");
@@ -38,7 +57,8 @@ function addNewTask() {
     // Add click event to delete button
     deleteButton.addEventListener("click", deleteTask);
     
-    // Add both elements to the list item
+    // Add all elements to the list item IN ORDER
+    newTask.appendChild(categoryLabel);
     newTask.appendChild(taskTextSpan);
     newTask.appendChild(deleteButton);
     
@@ -49,32 +69,9 @@ function addNewTask() {
     taskInput.value = "";
 }
 
-// Connect the add button to the function
-addButton.addEventListener("click", addNewTask);
-
-// Create the complete button
-let completeButton = document.createElement("button");
-completeButton.className = "complete-button";
-completeButton.innerText = "Complete";
-
-// Add click event to complete button
-completeButton.addEventListener("click", completeTask);
-
-// Add the complete button to the task (before the delete button)
-newTask.appendChild(completeButton);
-
-// Function to mark a task as completed
-function completeTask() {
+// Step 4: Function to delete a task
+function deleteTask() {
     let taskItem = this.parentElement;
-    let taskText = taskItem.querySelector('.task-text');
-    
-    // Toggle completed style
-    if (taskText.style.textDecoration === 'line-through') {
-        taskText.style.textDecoration = 'none';
-        this.innerText = 'Complete';
-    } else {
-        taskText.style.textDecoration = 'line-through';
-        this.innerText = 'Undo';
-    }
+    taskList.removeChild(taskItem);
 }
 
